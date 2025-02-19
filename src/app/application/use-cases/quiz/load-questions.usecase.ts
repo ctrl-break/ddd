@@ -1,8 +1,8 @@
-import { QuizQuestion } from '../../domain/models/quiz-question.model';
-import { SessionToken } from '../../domain/models/session-token.model';
-import { QuizSettings } from '../../domain/models/settings.models';
-import { QuizDomainService } from '../../domain/services/quiz-domain.service';
-import { TriviaApi } from '../../infrastructure/api/trivia-api.service';
+import { QuizQuestion } from '../../../domain/models/quiz-question.model';
+import { SessionToken } from '../../../domain/models/session-token.model';
+import { QuizSettings } from '../../../domain/models/settings.models';
+import { QuizDomainService } from '../../../domain/services/quiz-domain.service';
+import { TriviaApi } from '../../../infrastructure/api/trivia-api.service';
 
 export class LoadQuestionsUseCase {
     private quizDomainService = new QuizDomainService();

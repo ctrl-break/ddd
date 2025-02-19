@@ -1,4 +1,4 @@
-import { QuizDomainService } from '../../domain/services/quiz-domain.service';
+import { QuizDomainService } from '../../../domain/services/quiz-domain.service';
 
 export class SubmitAnswerUseCase {
     private quizDomainService = new QuizDomainService();

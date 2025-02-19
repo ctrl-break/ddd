@@ -1,12 +1,12 @@
-import { QuizSettings } from '../../domain/models/settings.models';
-import { Winner } from '../../domain/models/winner.model';
-import { QuizDomainService } from '../../domain/services/quiz-domain.service';
-import { WinnersRepository } from '../../infrastructure/storage/winners-repository.service';
+import { QuizSettings } from '../../../domain/models/settings.models';
+import { Winner } from '../../../domain/models/winner.model';
+import { QuizDomainService } from '../../../domain/services/quiz-domain.service';
+import { WinnersRepositoryService } from '../../../infrastructure/storage/winners-repository.service';
 
 export class FinishQuizUseCase {
     private quizDomainService = new QuizDomainService();
 
-    constructor(private winnersRepository: WinnersRepository) {}
+    constructor(private winnersRepository: WinnersRepositoryService) {}
 
     async execute(settings: QuizSettings, finalScore: number): Promise<void> {
         const winners = await this.winnersRepository.getWinners(settings.difficulty);
