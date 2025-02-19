@@ -1,25 +1,20 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
-import { QuizComponent } from '../quiz/quiz.component';
 import { QuizSettings } from '../../../../domain/models/settings.models';
+import { SpinnerComponent } from '../spinner/spinner.component';
+import { startWith } from 'rxjs';
+import { QuizFacadeService } from '../../adapters/quiz-facade.service';
 
 @Component({
     selector: 'app-main',
-    imports: [CommonModule, HeaderComponent, SidebarComponent],
+    imports: [CommonModule, HeaderComponent, SpinnerComponent],
     templateUrl: './main.component.html',
     styleUrl: './main.component.scss',
 })
 export class MainComponent {
-    quizSettings: QuizSettings = {
-        playerName: 'Player',
-        difficulty: 'easy',
-        type: 'multiple',
-        category: null,
-    };
+    initService = inject(QuizFacadeService);
 
-    onSettingsChange(settings: QuizSettings) {
-        this.quizSettings = settings;
-    }
+    isInitialized$ = this.initService.initializeApp().pipe(startWith(false));
 }

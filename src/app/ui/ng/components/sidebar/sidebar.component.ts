@@ -9,17 +9,4 @@ import { CommonModule } from '@angular/common';
     templateUrl: './sidebar.component.html',
     styleUrl: './sidebar.component.scss',
 })
-export class SidebarComponent {
-    settings: QuizSettings = {
-        playerName: 'Player',
-        difficulty: 'medium',
-        type: 'multiple',
-        category: null,
-    };
-
-    @Output() settingsChange = new EventEmitter<QuizSettings>();
-
-    applySettings() {
-        this.settingsChange.emit(this.settings);
-    }
-}
+export class SidebarComponent {}

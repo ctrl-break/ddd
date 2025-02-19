@@ -1,0 +1,18 @@
+<!-- <div class="quiz-container" *ngIf="!quizStarted && !quizEnded">
+    <button (click)="startQuiz()">Start Quiz!</button>
+</div>
+<div *ngIf="quizStarted">
+    <div class="quiz-header">
+        <span>Time left: {{ timeLeft }}s</span>
+        <span>Score: {{ score }}</span>
+    </div>
+    <div *ngIf="currentQuestion">
+        <p [innerHTML]="currentQuestion.question"></p>
+        <div *ngFor="let answer of currentQuestion.allAnswers">
+            <button (click)="submitAnswer(answer)">{{ answer }}</button>
+        </div>
+    </div>
+</div>
+<div *ngIf="quizEnded">
+    <p>Quiz Ended! Final Score: {{ score }}</p>
+</div> -->
