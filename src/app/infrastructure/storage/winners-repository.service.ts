@@ -1,6 +1,7 @@
 import { Winner } from '../../domain/models/winner.model';
+import { WinnerRepository } from '../../domain/repositories/winner.repository';
 
-export class WinnersRepository {
+export class WinnersRepositoryService implements WinnerRepository {
     private storageKey(difficulty: string): string {
         return `winners_${difficulty}`;
     }

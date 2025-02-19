@@ -6,3 +6,8 @@ export interface Winner {
     difficulty: Difficulty;
     date: Date;
 }
+
+export interface WinnerStore {
+    id: 'winners_easy' | 'winners_medium' | 'winners_hard';
+    value: Winner[];
+}
