@@ -5,8 +5,6 @@ import { Component, Input } from '@angular/core';
     selector: 'app-spinner',
     imports: [CommonModule],
     templateUrl: './spinner.component.html',
-    styleUrls: ['./spinner.component.css'],
+    styleUrls: ['./spinner.component.scss'],
 })
-export class SpinnerComponent {
-    @Input() isVisible: boolean = false;
-}
+export class SpinnerComponent {}

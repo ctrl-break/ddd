@@ -1,9 +1,16 @@
 <app-header></app-header>
-<div class="container" *ngIf="isInitialized$ | async as isInitialized">
-    <!-- <app-sidebar (settingsChange)="onSettingsChange($event)"></app-sidebar> -->
+<main class="container" *ngIf="isInitialized$ | async as isInitialized; else loader">
+    <app-sidebar></app-sidebar>
 
     <div class="content">
-        <app-spinner *ngIf="!isInitialized" [isVisible]="true"></app-spinner>
         <!-- <app-quiz *ngIf="isInitialized" [settings]="quizSettings"></app-quiz> -->
     </div>
-</div>
+
+    <app-sidebar-right></app-sidebar-right>
+</main>
+
+<ng-template #loader>
+    <div class="loader">
+        <app-spinner></app-spinner>
+    </div>
+</ng-template>

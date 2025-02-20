@@ -1,0 +1,16 @@
+<table class="winners-table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of tableRows; index as i">
+            <td>{{ i + 1 }}</td>
+            <td>{{ row?.playerName || '-' }}</td>
+            <td>{{ row?.score || '' }}</td>
+        </tr>
+    </tbody>
+</table>

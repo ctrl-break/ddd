@@ -8,6 +8,10 @@ export interface Winner {
 }
 
 export interface WinnerStore {
-    id: 'winners_easy' | 'winners_medium' | 'winners_hard';
+    id: WinnerStoreKeys;
     value: Winner[];
 }
+
+export type WinnerStoreKeys = 'winners_easy' | 'winners_medium' | 'winners_hard';
+
+export type WinnersObject = Record<WinnerStore['id'], Winner[]>;
