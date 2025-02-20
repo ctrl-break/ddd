@@ -2,6 +2,7 @@ import Dexie, { Table } from 'dexie';
 import { QuizSettings } from '../../domain/models/settings.models';
 import { WinnerStore } from '../../domain/models/winner.model';
 import { Category } from '../../domain/models/category.model';
+import { DefaultSettings } from './settings-repository.service';
 
 class AppDB extends Dexie {
     settings!: Table<QuizSettings, string>;
@@ -20,11 +21,7 @@ class AppDB extends Dexie {
 
     async populate() {
         await db.settings.add({
-            id: 'settings',
-            playerName: 'Player',
-            difficulty: 'medium',
-            type: 'multiple',
-            category: null,
+            ...DefaultSettings,
         });
         await db.winners.bulkAdd([
             {

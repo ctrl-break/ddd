@@ -1,12 +1,15 @@
 <app-header></app-header>
 <main class="container" *ngIf="isInitialized$ | async as isInitialized; else loader">
-    <app-sidebar></app-sidebar>
+    <ng-container *ngIf="settings$ | async as settings">
+        <app-sidebar></app-sidebar>
 
-    <div class="content">
-        <!-- <app-quiz *ngIf="isInitialized" [settings]="quizSettings"></app-quiz> -->
-    </div>
+        <div class="content">
+            {{ settings | json }}
+            <!-- <app-quiz *ngIf="isInitialized" [settings]="quizSettings"></app-quiz> -->
+        </div>
 
-    <app-sidebar-right></app-sidebar-right>
+        <app-sidebar-right [settings]="settings"></app-sidebar-right>
+    </ng-container>
 </main>
 
 <ng-template #loader>

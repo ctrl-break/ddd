@@ -58,8 +58,9 @@ label {
 input,
 textarea,
 select {
+    box-sizing: border-box;
     width: 100%;
-    padding: 10px 12px;
+    padding: 8px 8px;
     margin-bottom: 16px;
     border: 1px solid #ddd;
     border-radius: 4px;

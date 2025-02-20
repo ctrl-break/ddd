@@ -15,7 +15,8 @@ import { SidebarRightComponent } from '../sidebar-right/sidebar-right.component'
     styleUrl: './main.component.scss',
 })
 export class MainComponent {
-    initService = inject(QuizFacadeService);
+    quizService = inject(QuizFacadeService);
 
-    isInitialized$ = this.initService.initializeApp().pipe(startWith(false));
+    isInitialized$ = this.quizService.initializeApp().pipe(startWith(false));
+    settings$ = this.quizService.getSettings();
 }

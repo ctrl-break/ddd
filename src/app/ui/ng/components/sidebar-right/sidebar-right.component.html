@@ -1,30 +1,33 @@
 <div class="sidebar-right">
     <h3>Settings</h3>
-    <!-- <form (ngSubmit)="applySettings()">
+    <form (ngSubmit)="applySettings()">
         <div>
-            <label>Имя игрока</label>
-            <input type="text" [(ngModel)]="settings.playerName" name="playerName" required />
+            <label>Name</label>
+            <input type="text" [(ngModel)]="updSettings.playerName" name="playerName" required />
         </div>
         <div>
-            <label>Сложность</label>
-            <select [(ngModel)]="settings.difficulty" name="difficulty">
+            <label>Difficulty level</label>
+            <select [(ngModel)]="updSettings.difficulty" name="difficulty">
                 <option value="easy">Easy</option>
                 <option value="medium">Medium</option>
                 <option value="hard">Hard</option>
             </select>
         </div>
         <div>
-            <label>Тип вопросов</label>
-            <select [(ngModel)]="settings.type" name="type">
-                <option value="" [defaultSelected]="true">-</option>
+            <label>Type</label>
+            <select [(ngModel)]="updSettings.type" name="type">
+                <option value="">-</option>
                 <option value="multiple">Multiple Choice</option>
                 <option value="boolean">True / False</option>
             </select>
         </div>
-        <div>
-            <label>Категория</label>
-            <input type="number" [(ngModel)]="settings.category" name="category" />
+        <div *ngIf="categories$ | async as categories">
+            <label>Category</label>
+            <select [(ngModel)]="updSettings.category" name="category">
+                <option value="">-</option>
+                <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+            </select>
         </div>
-        <button type="submit">Применить</button>
-    </form> -->
+        <button type="submit">Submit</button>
+    </form>
 </div>
