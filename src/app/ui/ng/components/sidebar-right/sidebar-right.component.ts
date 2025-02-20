@@ -3,7 +3,7 @@ import { Component, Input, inject } from '@angular/core';
 import { QuizSettings } from '../../../../domain/models/settings.models';
 import { FormsModule } from '@angular/forms';
 import { DefaultSettings } from '../../../../infrastructure/storage/settings-repository.service';
-import { QuizFacadeService } from '../../adapters/quiz-facade.service';
+import { QuizFacadeService } from '../../../../application/adapters/quiz-facade.service';
 
 @Component({
     selector: 'app-sidebar-right',

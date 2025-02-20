@@ -1,18 +1,18 @@
 import { Injectable, inject } from '@angular/core';
-import { InitAppUseCase } from '../../../application/use-cases/init-app.usecase';
+import { InitAppUseCase } from '../use-cases/init-app.usecase';
 import { Observable, delay, from } from 'rxjs';
-import { COOKIE_STORAGE_TOKEN, TRIVIA_API_TOKEN } from '../../../app.tokens';
-import { WinnersRepositoryService } from '../../../infrastructure/storage/winners-repository.service';
+import { COOKIE_STORAGE_TOKEN, TRIVIA_API_TOKEN } from '../../app.tokens';
+import { WinnersRepositoryService } from '../../infrastructure/storage/winners-repository.service';
 import { liveQuery } from 'dexie';
-import { WinnersObject } from '../../../domain/models/winner.model';
-import { SettingsRepositoryService } from '../../../infrastructure/storage/settings-repository.service';
-import { QuizSettings } from '../../../domain/models/settings.models';
-import { Category } from '../../../domain/models/category.model';
-import { UpdateSettingsUseCase } from '../../../application/use-cases/settings/update-settings.usecase';
-import { LoadQuestionsUseCase } from '../../../application/use-cases/quiz/load-questions.usecase';
-import { SubmitAnswerUseCase } from '../../../application/use-cases/quiz/submit-answer.usecase';
-import { FinishQuizUseCase } from '../../../application/use-cases/quiz/finish-quiz.usecase';
-import { QuizProcess, QuizProcessService } from '../services/quiz-process.service';
+import { WinnersObject } from '../../domain/models/winner.model';
+import { SettingsRepositoryService } from '../../infrastructure/storage/settings-repository.service';
+import { QuizSettings } from '../../domain/models/settings.models';
+import { Category } from '../../domain/models/category.model';
+import { UpdateSettingsUseCase } from '../use-cases/settings/update-settings.usecase';
+import { LoadQuestionsUseCase } from '../use-cases/quiz/load-questions.usecase';
+import { SubmitAnswerUseCase } from '../use-cases/quiz/submit-answer.usecase';
+import { FinishQuizUseCase } from '../use-cases/quiz/finish-quiz.usecase';
+import { QuizProcess, QuizProcessService } from '../../ui/ng/services/quiz-process.service';
 
 @Injectable({
     providedIn: 'root',

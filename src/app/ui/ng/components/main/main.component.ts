@@ -5,7 +5,7 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 import { QuizSettings } from '../../../../domain/models/settings.models';
 import { SpinnerComponent } from '../spinner/spinner.component';
 import { startWith } from 'rxjs';
-import { QuizFacadeService } from '../../adapters/quiz-facade.service';
+import { QuizFacadeService } from '../../../../application/adapters/quiz-facade.service';
 import { SidebarRightComponent } from '../sidebar-right/sidebar-right.component';
 import { QuizComponent } from '../quiz/quiz.component';
 

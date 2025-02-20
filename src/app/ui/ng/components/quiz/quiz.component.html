@@ -5,7 +5,7 @@
     <ng-container *ngIf="quiz$ | async as quiz">
         <app-result-timer [score]="quiz.score" [timeLeft]="timeLeft"></app-result-timer>
 
-        <p>#{{ quizProcess.currentIndex }}</p>
+        <p class="number">#{{ quizProcess.currentIndex }}</p>
         <app-question
             *ngIf="quiz.currentQuestion"
             [question]="quiz.currentQuestion"

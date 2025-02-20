@@ -2,7 +2,7 @@ import { Component, EventEmitter, Output, inject } from '@angular/core';
 import { QuizSettings } from '../../../../domain/models/settings.models';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { QuizFacadeService } from '../../adapters/quiz-facade.service';
+import { QuizFacadeService } from '../../../../application/adapters/quiz-facade.service';
 import { WinnersTableComponent } from '../winners-table/winners-table.component';
 import { WinnersObject } from '../../../../domain/models/winner.model';
 import { Observable } from 'rxjs';

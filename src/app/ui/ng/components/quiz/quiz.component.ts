@@ -4,7 +4,7 @@ import { QuizSettings } from '../../../../domain/models/settings.models';
 import { ResultTimerComponent } from './result-timer/result-timer.component';
 import { QuestionComponent } from './question/question.component';
 import { QuizProcess, QuizProcessService } from '../../services/quiz-process.service';
-import { QuizFacadeService } from '../../adapters/quiz-facade.service';
+import { QuizFacadeService } from '../../../../application/adapters/quiz-facade.service';
 import { Observable } from 'rxjs';
 
 @Component({
