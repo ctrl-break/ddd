@@ -12,7 +12,14 @@ export class CookieStorage {
         return null;
     }
 
-    set(key: string, value: string) {
-        document.cookie = `${key}=${value}; path=/`;
+    set(key: string, value: string, expires?: Date) {
+        const cookieString = `${key}=${value}; path=/`;
+
+        if (expires) {
+            const expiresString = `; expires=${expires.toUTCString()}`;
+            document.cookie = cookieString + expiresString;
+        } else {
+            document.cookie = cookieString;
+        }
     }
 }

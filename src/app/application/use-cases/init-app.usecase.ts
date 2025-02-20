@@ -2,7 +2,7 @@ import { TriviaApi } from '../../infrastructure/api/trivia-api.service';
 import { db } from '../../infrastructure/storage/app.db';
 import { CookieStorage } from '../../infrastructure/storage/cookie-storage.service';
 import { InitSessionUseCase } from './init-session.usecase';
-import { LoadCategoriesUseCase } from './quiz/load-categories.usecase';
+import { LoadCategoriesUseCase } from './settings/load-categories.usecase';
 
 export class InitAppUseCase {
     initSession: InitSessionUseCase;

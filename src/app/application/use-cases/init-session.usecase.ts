@@ -10,12 +10,16 @@ export class InitSessionUseCase {
 
     async execute(): Promise<SessionToken> {
         let token = this.cookieStorage.get('session_token');
+        const currentDate = new Date();
+        const datePlus = new Date(currentDate.getTime() + 3 * 60 * 60 * 1000);
+
         if (token) {
+            this.cookieStorage.set('session_token', token, datePlus);
             return { token };
         }
         const response = await this.triviaApi.requestToken();
         token = response.token;
-        this.cookieStorage.set('session_token', token);
+        this.cookieStorage.set('session_token', token, datePlus);
         return { token };
     }
 }

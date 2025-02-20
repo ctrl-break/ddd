@@ -5,7 +5,6 @@ export class LoadCategoriesUseCase {
     constructor(private triviaApi: TriviaApi) {}
 
     async execute(): Promise<Category[]> {
-        const categories = await this.triviaApi.getCategories();
-        return categories;
+        return await this.triviaApi.getCategories();
     }
 }
