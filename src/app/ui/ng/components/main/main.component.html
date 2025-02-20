@@ -4,8 +4,8 @@
         <app-sidebar></app-sidebar>
 
         <div class="content">
-            {{ settings | json }}
-            <!-- <app-quiz *ngIf="isInitialized" [settings]="quizSettings"></app-quiz> -->
+            <h3>Current player: {{ settings.playerName }}</h3>
+            <app-quiz [settings]="settings"></app-quiz>
         </div>
 
         <app-sidebar-right [settings]="settings"></app-sidebar-right>

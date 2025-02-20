@@ -7,10 +7,11 @@ import { SpinnerComponent } from '../spinner/spinner.component';
 import { startWith } from 'rxjs';
 import { QuizFacadeService } from '../../adapters/quiz-facade.service';
 import { SidebarRightComponent } from '../sidebar-right/sidebar-right.component';
+import { QuizComponent } from '../quiz/quiz.component';
 
 @Component({
     selector: 'app-main',
-    imports: [CommonModule, HeaderComponent, SidebarComponent, SidebarRightComponent, SpinnerComponent],
+    imports: [CommonModule, HeaderComponent, SidebarComponent, SidebarRightComponent, SpinnerComponent, QuizComponent],
     templateUrl: './main.component.html',
     styleUrl: './main.component.scss',
 })

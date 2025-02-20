@@ -1,18 +1,19 @@
-<!-- <div class="quiz-container" *ngIf="!quizStarted && !quizEnded">
+<div class="quiz-container" *ngIf="!quizStarted">
     <button (click)="startQuiz()">Start Quiz!</button>
 </div>
 <div *ngIf="quizStarted">
-    <div class="quiz-header">
-        <span>Time left: {{ timeLeft }}s</span>
-        <span>Score: {{ score }}</span>
-    </div>
-    <div *ngIf="currentQuestion">
-        <p [innerHTML]="currentQuestion.question"></p>
-        <div *ngFor="let answer of currentQuestion.allAnswers">
-            <button (click)="submitAnswer(answer)">{{ answer }}</button>
-        </div>
-    </div>
+    <ng-container *ngIf="quiz$ | async as quiz">
+        <app-result-timer [score]="quiz.score" [timeLeft]="timeLeft"></app-result-timer>
+
+        <p>#{{ quizProcess.currentIndex }}</p>
+        <app-question
+            *ngIf="quiz.currentQuestion"
+            [question]="quiz.currentQuestion"
+            (answerSelected)="submitAnswer(quiz, $event)"
+        >
+        </app-question>
+    </ng-container>
 </div>
-<div *ngIf="quizEnded">
-    <p>Quiz Ended! Final Score: {{ score }}</p>
-</div> -->
+<div *ngIf="quizEnded && !quizStarted">
+    <p class="strong">Quiz Ended! Final Score: {{ finalScore }}</p>
+</div>

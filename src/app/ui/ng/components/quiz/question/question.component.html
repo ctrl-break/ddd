@@ -1,0 +1,8 @@
+<div class="question-container">
+    <div class="question-text" [innerHTML]="question.question"></div>
+    <div class="answers">
+        <button *ngFor="let answer of question.allAnswers" (click)="onAnswerSelected(answer)" class="answer-button">
+            {{ answer }}
+        </button>
+    </div>
+</div>
